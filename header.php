@@ -24,5 +24,3 @@
 
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
-
-	<h1>Olá mundo</h1>
