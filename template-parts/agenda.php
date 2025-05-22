@@ -19,9 +19,9 @@
 
     <div class="row boxBarrer">
       <div class="lineBarrer"></div>
-      <a href="/" class="btn btn-verMais">
+      <a href="/" class="btn btn-azul">
         Ver Todas
-        <img src="" alt="Icone de setinha" class="img-fluid" width="" height="" loading="lazy">
+        <img src="" alt="Icone de setinha" class="img-fluid" width="32" height="32" loading="lazy">
       </a>
       <div class="lineBarrer"></div>
     </div>

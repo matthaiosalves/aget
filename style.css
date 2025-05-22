@@ -46,12 +46,14 @@ body {
   font-family: "Open Sans";
   text-transform: uppercase;
   color: #1b1c1d;
+  text-align: center;
 }
 .sobreNos .subtitle {
   color: #272289;
   font-size: 36px;
   font-weight: bold;
   font-family: "Work Sans";
+  text-align: center;
 }
 .sobreNos .boxContent {
   font-size: 20px;
@@ -95,4 +97,75 @@ body {
   color: #ffffff;
   font-weight: bold;
   font-size: 28px;
+}
+.btn-azul {
+  border: 2px solid #ffffff;
+  background-color: #272289;
+  min-width: 270px;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 20px;
+}
+.btn-azul:hover {
+  background-color: #00913b;
+}
+#page .title {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Open Sans";
+  text-transform: uppercase;
+  color: #1b1c1d;
+  text-align: center;
+}
+#page .subtitle {
+  color: #272289;
+  font-size: 38px;
+  font-weight: bold;
+  font-family: "Work Sans";
+  text-align: center;
+}
+#page .description {
+  font-weight: normal;
+  font-family: "Open Sans";
+  color: #1b1c1d;
+  font-size: 20px;
+  text-align: center;
+}
+
+.agendas .row {
+  gap: 30px;
+}
+.agendas .boxImage {
+  min-width: 370px;
+  min-height: 461px;
+}
+.agendas .boxImage img,
+.agenda .boxAgenda img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.agenda .boxAgenda {
+  min-width: 370px;
+  min-height: 310px;
+}
+
+.cursos {
+  background-color: #f7f9fe;
+}
+.cursos .boxCurso {
+  min-width: 371px;
+  min-height: 360px;
+  border-radius: 30px;
+}
+.cursos .boxCurso img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
