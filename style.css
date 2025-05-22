@@ -39,3 +39,60 @@ body {
   width: 100%;
   margin: 0 auto;
 }
+
+.sobreNos .title {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Open Sans";
+  text-transform: uppercase;
+  color: #1b1c1d;
+}
+.sobreNos .subtitle {
+  color: #272289;
+  font-size: 36px;
+  font-weight: bold;
+  font-family: "Work Sans";
+}
+.sobreNos .boxContent {
+  font-size: 20px;
+  font-weight: normal;
+  font-family: "Open Sans";
+  color: #1b1c1d;
+}
+
+.boxBarrer {
+  justify-content: space-between;
+}
+.boxBarrer .lineBarrer {
+  background-color: #c4c4c4;
+  height: 2px;
+  width: 428px;
+  max-width: 100%;
+}
+.boxBarrer .btn-verMais {
+  border-radius: 37px;
+  min-width: 209px;
+  max-width: 100%;
+  min-height: 63px;
+  background-color: #b7b7bf;
+  color: #dbdbdb;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "Open Sans";
+}
+
+.btn-zap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #5bc456;
+  border-radius: 38px;
+  min-width: 405px;
+  max-width: 100%;
+  min-height: 75px;
+  font-family: "Work Sans";
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 28px;
+}

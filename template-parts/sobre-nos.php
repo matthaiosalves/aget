@@ -12,21 +12,21 @@
     <div class="row boxBarrer">
       <div class="lineBarrer"></div>
       <a href="/" class="btn btn-verMais">
-        <img src="" alt="Icone que simboliza ver mais" class="img-fluid" width="" height="" loading="lazy">
+        <img src="" alt="Icone que simboliza ver mais" class="img-fluid" width="28" height="28" loading="lazy">
         Ver Mais
       </a>
       <div class="lineBarrer"></div>
     </div>
 
-    <div class="row">
+    <div class="row justify-content-center align-items-center">
       <a href="/" class="btn btn-zap">
         Entrar no grupo
-        <img src="" alt="Icone que simboliza ver mais" class="img-fluid" width="" height="" loading="lazy">
+        <img src="" alt="Icone que simboliza ver mais" class="img-fluid" width="45" height="45" loading="lazy">
       </a>
     </div>
 
 
-    <img src="" alt="Icone que simboliza ver mais" class="img-fluid" width="" height="" loading="lazy">
+    <img src="" alt="Icone que simboliza ver mais" class="img-fluid" width="1170" height="356" loading="lazy">
 
   </div>
 </section>
