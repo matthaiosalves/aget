@@ -21,7 +21,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -39,7 +39,6 @@ body {
   width: 100%;
   margin: 0 auto;
 }
-
 .sobreNos .title {
   font-size: 20px;
   font-weight: bold;
@@ -47,6 +46,12 @@ body {
   text-transform: uppercase;
   color: #1b1c1d;
   text-align: center;
+}
+.agenda .title {
+  font-size: 32px;
+  font-family: "Open Sans";
+  font-weight: 700;
+  color: #334856;
 }
 .sobreNos .subtitle {
   color: #272289;
@@ -61,9 +66,9 @@ body {
   font-family: "Open Sans";
   color: #1b1c1d;
 }
-
 .boxBarrer {
   justify-content: space-between;
+  align-items: center;
 }
 .boxBarrer .lineBarrer {
   background-color: #c4c4c4;
@@ -73,16 +78,23 @@ body {
 }
 .boxBarrer .btn-verMais {
   border-radius: 37px;
-  min-width: 209px;
+  width: 209px;
   max-width: 100%;
-  min-height: 63px;
+  height: 60px;
   background-color: #b7b7bf;
   color: #dbdbdb;
   font-size: 24px;
   font-weight: 600;
   font-family: "Open Sans";
-}
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+.boxBarrer .btn-verMais:hover {
+  background-color: #00913b;
+}
 .btn-zap {
   display: flex;
   align-items: center;
@@ -90,7 +102,7 @@ body {
   text-align: center;
   background-color: #5bc456;
   border-radius: 38px;
-  min-width: 405px;
+  width: 405px;
   max-width: 100%;
   min-height: 75px;
   font-family: "Work Sans";
@@ -98,21 +110,43 @@ body {
   font-weight: bold;
   font-size: 28px;
 }
+.btn-zap img {
+  position: relative;
+  left: 55px;
+}
+.btn-zap:hover {
+  color: #ffffff;
+}
 .btn-azul {
   border: 2px solid #ffffff;
   background-color: #272289;
-  min-width: 270px;
-  min-height: 64px;
+  width: 235px;
+  min-height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
   font-family: "Poppins";
-  font-weight: 600;
+  font-weight: 400;
   font-size: 20px;
+  border-radius: 39px;
+}
+.btn-azul img {
+  position: relative;
+  left: 27px;
+}
+.btn-azul:hover img {
+  left: 35px;
 }
 .btn-azul:hover {
   background-color: #00913b;
+  color: #ffffff;
+}
+.btn-form img {
+  left: 15px;
+}
+.btn-form:hover img {
+  left: 35px;
 }
 #page .title {
   font-size: 20px;
@@ -136,12 +170,11 @@ body {
   font-size: 20px;
   text-align: center;
 }
-
 .agendas .row {
   gap: 30px;
 }
 .agendas .boxImage {
-  min-width: 370px;
+  width: 370px;
   min-height: 461px;
 }
 .agendas .boxImage img,
@@ -150,22 +183,366 @@ body {
   height: 100%;
   width: 100%;
 }
-
 .agenda .boxAgenda {
-  min-width: 370px;
+  width: 370px;
   min-height: 310px;
 }
+.agenda .boxAgenda .boxData {
+  width: 130px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  position: relative;
+  top: 20px;
+
+  background-color: #272289;
+}
+.agenda .boxAgenda .boxData.cardTop:after {
+  background-color: #c5cbc7;
+  height: 11px;
+  width: 11px;
+}
+.agenda .boxAgenda .boxData.cardTop:before {
+  background-color: #ffffff;
+  height: 11px;
+  width: 11px;
+}
+.agenda .boxAgenda .boxData .data {
+  font-size: 19px;
+  font-family: "Open Sans";
+  font-weight: bold;
+}
 .cursos {
   background-color: #f7f9fe;
 }
 .cursos .boxCurso {
-  min-width: 371px;
+  width: 371px;
   min-height: 360px;
   border-radius: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.cursos .boxCurso img {
+.cursos .boxCurso .imagemCurso {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 30px;
+}
+.cardTop {
+  background-color: #061534;
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  margin-bottom: 40px;
+  max-width: 100%;
+  padding: 20px;
+  padding-left: 40px;
+  position: relative;
+  width: 200px;
+  font-family: "Work Sans";
+  font-weight: bold;
+}
+.cardTop:before {
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  right: -1px;
+  top: 0;
+}
+.cardTop:after {
+  bottom: -1px;
+  clip-path: polygon(0 100%, 0 0, 100% 100%);
+  left: 0;
+}
+.cardTop:after,
+.cardTop:before {
+  background-color: #f7f9fe;
+  content: "";
+  height: 20px;
+  position: absolute;
+  width: 20px;
+  z-index: 1;
+}
+.boxTag {
+  display: flex;
+  align-items: center;
+}
+.boxTag .tag {
+  margin-bottom: 0;
+  font-size: 32px;
+}
+.btn-inscrever {
+  position: absolute;
+  bottom: -25px;
+}
+.youtube {
+  background-color: #f7f9fe;
+  min-height: 592px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.youtube .title {
+  color: #00913b;
+  font-size: 38px;
+  font-family: "Work Sans";
+  font-weight: bold;
+  border-bottom: 1px #dbdbdb;
+}
+.youtube .description {
+  color: #272289;
+  font-size: 22px;
+  font-family: "Poppins";
+}
+.contato {
+  background-color: #272289;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.contato input {
+  min-height: 45px;
+}
+.contato input,
+.contato textarea {
+  border: 1px solid #c2c2c27a;
+  background-color: transparent;
+}
+.contato textarea {
+  border-radius: 23px;
+}
+.youtube iframe {
+  width: 100%;
+  max-width: 100%;
+}
+.youtube .row {
+  justify-content: space-between;
+}
+.copyright {
+  background-color: #272289;
+  color: #ffffff;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Footer */
+.footer {
+  background-color: #ffffff;
+}
+.footer .boxIcon {
+  margin-bottom: 30px;
+}
+.footer .boxTitleFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 21px;
+}
+.footer .boxTitleFooter .title {
+  font-size: 22px;
+  line-height: 32px;
+
+  margin-bottom: 0;
+
+  color: #1b1c1d;
+  font-family: "Poppins", sans-serif;
+}
+.footer .boxTitleFooter .borderBottom {
+  width: 24px;
+  height: 2px;
+  background-color: #1b1c1d;
+}
+.footer .boxSocials {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  flex-wrap: wrap;
+  margin-bottom: 21px;
+}
+.footer .boxDescriptionFooter .description {
+  color: #1b1c1d;
+  font-size: 13px;
+  line-height: 24px;
+  opacity: 0.55;
+  width: 442px;
+  font-family: "Lato", sans-serif;
+}
+.footer .boxSocial .boxTitleFooter {
+  margin-bottom: 16px;
+}
+.footer .boxSocial .boxTitleFooter .title {
+  color: #1b1c1d !important;
+  font-size: 18px;
+  line-height: 32px;
+  color: #1b1c1d;
+  font-family: "Lato", sans-serif;
+}
+.footer .boxSocials .social {
+  background-color: transparent;
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  text-decoration: none;
+  color: #00913b;
+  border: 1px solid #00913b;
+
+  transition: all 0.2 ease-in-out;
+}
+.footer .boxSocials .social:hover {
+  filter: brightness(0.85);
+}
+.footer .boxItemFooter {
+  margin-left: 165px;
+}
+.footer .boxItemFooter .boxLinks ul {
+  padding-left: 0;
+}
+.footer .boxItemFooter .boxLinks ul li,
+.footer .boxItemFooter .boxLinks ul li a {
+  list-style: none;
+
+  color: #1b1c1d;
+  font-size: 15px;
+  line-height: 24px;
+
+  margin-bottom: 7px;
+  cursor: pointer;
+  text-decoration: none;
+
+  font-family: "Lato", sans-serif;
+}
+.footer .boxItemFooter .boxDescriptionItemFooter .description {
+  width: 402px;
+  color: #1b1c1d;
+  font-size: 16px;
+  line-height: 24px;
+
+  text-decoration: none;
+
+  font-family: "Lato", sans-serif;
+}
+.footer .boxItemFooter .boxDescriptionItemFooter .btnFooter {
+  max-width: 140px;
+  width: 100%;
+  height: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #1e3250;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 24px;
+  margin-bottom: 27px;
+  font-family: "Lato", sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+.footer .boxItemFooter .boxDescriptionItemFooter .btnFooter > img {
+  transform: translate(-6px);
+  transition: all 0.2s ease-in-out;
+}
+.footer .boxItemFooter .boxDescriptionItemFooter .btnFooter:hover {
+  background-color: #aecfe6;
+}
+.conheca-equipe {
+  padding-top: 60px;
+  padding-bottom: 65px;
+  background-color: rgba(244, 244, 244, 0.5);
+}
+.conheca-equipe .container-fluid > hr {
+  margin-top: -5px;
+  color: #8d8b8b;
+}
+.conheca-equipe .boxTitleAndDescription {
+  text-align: center;
+}
+.conheca-equipe .listTeam {
+  justify-content: center;
+  margin-top: 40px;
+}
+.conheca-equipe .listTeam .boxTeam {
+  width: 321px;
+  max-width: 100%;
+}
+.conheca-equipe .listTeam .boxTeam figure img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+  border-radius: 150px;
+}
+.conheca-equipe .listTeam .boxTitleAndDescription .title {
+  margin-bottom: 0;
+}
+.conheca-equipe .listTeam .boxTeam .boxTitleAndDescription .description {
+  color: #7b7b7b;
+  font-size: 17px;
+  line-height: 28px;
+}
+.conheca-equipe .listTeam .boxTitleAndDescription > hr {
+  width: 165px;
+  height: 1px;
+  color: #2d2d2d;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 17px;
+  opacity: 1;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  width: 60px;
+  height: 60px;
+  border-radius: 35px;
+  border: 2px solid #ffffff;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 24px;
+  color: #ffffff;
+}
+.swiper-slide img {
+  height: 600px;
+  object-fit: cover;
+}
+.swiper-pagination {
+  bottom: 75px !important;
+}
+.swiper-pagination-bullet {
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  height: 10px;
+  width: 17px;
+  background-color: transparent;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  border: 2px solid #ffed00;
+  background-color: #ffed00;
+  width: 57px;
+}
+
+@media (max-width: 1130px) {
+  .cursos .boxCurso {
+    margin-bottom: 50px;
+  }
+  .boxBarrer .lineBarrer {
+    display: none;
+  }
+  .boxBarrer,
+  .youtube .row {
+    justify-content: center;
+  }
 }

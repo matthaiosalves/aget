@@ -11,7 +11,6 @@
 
 function carregar_estilos_tema()
 {
-	// Bootstrap CSS via CDN
 	wp_enqueue_style(
 		'bootstrap-css',
 		'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css',
@@ -19,10 +18,30 @@ function carregar_estilos_tema()
 		'5.0.2'
 	);
 
-	// style.css do tema
 	wp_enqueue_style(
-		'style-principal',
-		get_stylesheet_uri()
+		'tema-principal',
+		get_stylesheet_uri(),
+		array('bootstrap-css'),
+		filemtime(get_stylesheet_directory() . '/style.css')
 	);
 }
 add_action('wp_enqueue_scripts', 'carregar_estilos_tema');
+
+if (function_exists('acf_add_options_page')) {
+	// Página principal de opções
+	acf_add_options_page(array(
+		'page_title'    => 'Opções do Tema',
+		'menu_title'    => 'Opções do Tema',
+		'menu_slug'     => 'opcoes-do-tema',
+		'capability'    => 'edit_posts',
+		'redirect'      => false
+	));
+
+	// Subpágina para o Footer
+	acf_add_options_sub_page(array(
+		'page_title'    => 'Rodapé',
+		'menu_title'    => 'Rodapé',
+		'parent_slug'   => 'opcoes-do-tema',
+		'menu_slug'     => 'opcoes-footer',
+	));
+}

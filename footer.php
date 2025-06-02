@@ -9,95 +9,83 @@
  *
  * @package AGET
  */
-$footer = get_field('rodape', 'option');
+
 ?>
-<footer class="mt-auto">
+<footer style="margin-top:24px;">
   <div class="footer">
-    <div class="container-fluid">
+    <div class="container-fluid" style="border-top: 1px solid #707070;padding-top:60px;padding-bottom:25px;">
       <div class="row">
 
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
           <div class="boxIcon">
-
-            <img src="<?php echo $footer['logo']; ?>" alt="" class="img-fluid">
-
+            <img src="<?php the_field('icone_principal', 'option'); ?>" alt="Logo do site" class="img-fluid">
           </div>
           <div class="boxDescriptionFooter">
-            <p class="description"><?php echo $footer['descricao']; ?></p>
+            <p class="mb-0" style="font-family: 'Lato';font-size:16px;color:#1B1C1D;font-weight:500;">
+              <?php the_field('nome', 'option'); ?>
+            </p>
+            <p style="font-family: 'Lato';font-size:16px;color:#1B1C1D;font-weight:500;">
+              <?php the_field('cnpj', 'option'); ?>
+            </p>
           </div>
         </div>
 
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
-
           <div class="boxItemFooter">
             <div class="boxTitleFooter">
-              <p class="title">
-                Links Úteis
-              </p>
-              <span class="borderBottom"></span>
+              <p class="title" style="font-weight:600;font-size:20px;">Links Úteis</p>
             </div>
-
-            <?php
-            $campos = $footer['campos'];
-            ?>
-
-
             <div class="boxLinks">
               <ul>
-                <?php foreach ($campos as $item) : ?>
-                  <li><a href="<?php echo $item['url']; ?>"><?php echo $item['titulo']; ?></a></li>
+                <?php
+                $linksUteis = get_field('links_uteis', 'option');
+
+                foreach ($linksUteis as $item):
+                ?>
+                  <li>
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/arrow-footer.svg" alt="" height="12" width="12" loading="lazy" style="margin-right:9px;">
+                    <a href="<?php echo $item['url']; ?>" style="font-weight:600;font-size:16px;"><?php echo $item['titulo']; ?></a>
+                  </li>
                 <?php endforeach; ?>
               </ul>
             </div>
-
           </div>
-
         </div>
 
-        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 boxSocialsPrime">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
           <div class="boxSocial">
-
             <div class="boxTitleFooter">
-              <p class="title">
-                Nas Redes
+              <p class="title" style="font-weight:600;font-size:20px;">Nossos Contatos</p>
+            </div>
+            <div>
+              <p style="font-family: 'Lato';font-size:16px;color:#1B1C1D;font-weight:600;margin-bottom:35px;">
+                <?php the_field('endereco', 'option'); ?>
               </p>
-              <span class="borderBottom"></span>
+              <p style="font-family: 'Lato';font-size:16px;color:#1B1C1D;font-weight:600;margin-bottom:0;">
+                <?php the_field('contato', 'option'); ?>
+              </p>
+              <p style="font-family: 'Lato';font-size:16px;color:#1B1C1D;font-weight:600;margin-bottom:22px;">
+                <?php the_field('sac', 'option'); ?>
+              </p>
+              <p style="font-family: 'Lato';font-size:16px;color:#1B1C1D;font-weight:600;">
+                <?php the_field('e-mail', 'option'); ?>
+              </p>
             </div>
-
-            <?php
-            $facebook_link = get_field('facebook', 'option');
-            $instagram_link = get_field('instagram', 'option');
-            $youtube_link = get_field('youtube', 'option');
-            $linkedin_link = get_field('linkedin', 'option');
-            ?>
-
-            <div class="boxSocials">
-              <?php if ($facebook_link): ?>
-                <a href="<?php echo esc_url($facebook_link); ?>" class="social" target="_blank" rel="noopener noreferrer" aria-label="Abre o facebook do escritório">
-                  <i class="fa-brands fa-facebook-f"></i>
-                </a>
-              <?php endif; ?>
-
-              <?php if ($instagram_link): ?>
-                <a href="<?php echo esc_url($instagram_link); ?>" class="social" target="_blank" rel="noopener noreferrer" aria-label="Abre o instagram do escritório">
-                  <i class="fa-brands fa-instagram"></i>
-                </a>
-              <?php endif; ?>
-
-              <?php if ($youtube_link): ?>
-                <a href="<?php echo esc_url($youtube_link); ?>" class="social" target="_blank" rel="noopener noreferrer" aria-label="Abre o youtube do escritório">
-                  <i class="fa-brands fa-youtube"></i>
-                </a>
-              <?php endif; ?>
-
-              <?php if ($linkedin_link): ?>
-                <a href="<?php echo esc_url($linkedin_link); ?>" class="social" target="_blank" rel="noopener noreferrer" aria-label="Abre o linkedin do escritório">
-                  <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-              <?php endif; ?>
-            </div>
-
           </div>
+
+          <div class="boxSocial" style="margin-top:22px;">
+            <div class="boxSocials">
+              <?php
+              $redes_sociais = get_field('redes_sociais', 'option');
+              foreach ($redes_sociais as $item):
+              ?>
+                <a href="<?php echo $item['url']; ?>" class="social" target="_blank" rel="noopener noreferrer" aria-label="Abre o instagram do escritório">
+                  <?php echo $item['icone']; ?>
+                </a>
+              <?php endforeach; ?>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -107,11 +95,11 @@ $footer = get_field('rodape', 'option');
   <div class="copyright">
     <div class="container-fluid">
       <div class="row align-items-center">
-        <div class="col-sm-12 col-md-12 col-lg-7">© <?php echo date('Y'); ?> | Todos os direitos reservados | <?php echo get_bloginfo('name'); ?></div>
-        <div class="col-sm-12 col-md-12 col-lg-5 text-sm-center text-md-end">
-          Desenvolvido por Fabino designer
+        <div class="col-sm-12 col-md-12 col-lg-7" style="font-family:'Open Sans';font-size:16px;">© <?php echo date('Y'); ?> | Todos os direitos reservados | <?php echo get_bloginfo('name'); ?></div>
+        <div class="col-sm-12 col-md-12 col-lg-5 text-sm-center text-md-end" style="font-family:'Poppins';font-size:15x;">
+          <span style="margin-right: 30px;">Desenvolvido por Fabino designer</span>
 
-          <a class="social" href="//www.linkedin.com/in/jo%C3%A3o-paulo-fabino/">
+          <a class="social text-decoration-none" href="//www.linkedin.com/in/jo%C3%A3o-paulo-fabino/">
             <svg xmlns="http://www.w3.org/2000/svg" width="119.263" height="36.883" viewBox="0 0 119.263 36.883">
               <g id="Grupo_15082" data-name="Grupo 15082" transform="translate(-95.586 -37.107)">
                 <path id="Caminho_37" data-name="Caminho 37" d="M663.5,91.976h-9.6v3.1h1.762v14.937h3.1V95.073h4.782a4.033,4.033,0,0,1,4.033,4.033v10.9h3.1V99.145A7.169,7.169,0,0,0,663.5,91.976Z" transform="translate(-475.992 -46.778)" fill="#fff" />
@@ -139,7 +127,7 @@ $footer = get_field('rodape', 'option');
                 </g>
               </g>
             </svg>
-            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true" style="margin-left:10px;font-size:20px;color:#FFFFFF;"></i>
           </a>
         </div>
       </div>
@@ -148,6 +136,23 @@ $footer = get_field('rodape', 'option');
 
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    new Swiper('.bannerSwiper', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      }
+    });
+  });
+</script>
+
 <?php wp_footer(); ?>
 
 </body>
