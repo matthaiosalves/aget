@@ -1,3 +1,11 @@
+<?php
+/*
+Template Name: Cursos
+*/
+get_header();
+?>
+<?php get_template_part('template-parts/banner'); ?>
+
 <section class="cursos position-relative" style="padding-top:70px;">
   <div class="container-fluid">
     <div class="row" style="position:absolute;top:-30px;">
@@ -35,7 +43,7 @@
 
     <div class="row boxBarrer" style="padding-bottom:70px;">
       <div class="lineBarrer"></div>
-      <a href="/cursos/" class="btn btn-verMais">
+      <a href="/" class="btn btn-verMais">
         <img src="<?php echo get_template_directory_uri(); ?>/img/add-circle.svg" alt="Icone que simboliza ver mais" class="img-fluid" width="28" height="28" loading="lazy">
         Ver Mais
       </a>
@@ -44,3 +52,9 @@
 
   </div>
 </section>
+
+<?php get_template_part('template-parts/agenda'); ?>
+<?php get_template_part('template-parts/contato'); ?>
+
+<?php
+get_footer();

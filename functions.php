@@ -7,6 +7,7 @@
  *
  * @package AGET
  */
+require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 
 
 function carregar_estilos_tema()
@@ -45,3 +46,11 @@ if (function_exists('acf_add_options_page')) {
 		'menu_slug'     => 'opcoes-footer',
 	));
 }
+
+function registrar_menu()
+{
+	register_nav_menus([
+		'menu-principal' => 'Menu Principal',
+	]);
+}
+add_action('after_setup_theme', 'registrar_menu');

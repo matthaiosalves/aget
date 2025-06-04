@@ -1,3 +1,11 @@
+<?php
+/*
+Template Name: Agenda
+*/
+get_header();
+?>
+<?php get_template_part('template-parts/banner'); ?>
+
 <section class="agendas" id="page">
   <div class="container-fluid">
     <div class="row">
@@ -19,3 +27,8 @@
     </div>
   </div>
 </section>
+
+<?php get_template_part('template-parts/contato'); ?>
+
+<?php
+get_footer();

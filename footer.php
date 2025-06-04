@@ -96,7 +96,7 @@
     <div class="container-fluid">
       <div class="row align-items-center">
         <div class="col-sm-12 col-md-12 col-lg-7" style="font-family:'Open Sans';font-size:16px;">© <?php echo date('Y'); ?> | Todos os direitos reservados | <?php echo get_bloginfo('name'); ?></div>
-        <div class="col-sm-12 col-md-12 col-lg-5 text-sm-center text-md-end" style="font-family:'Poppins';font-size:15x;">
+        <div class="col-sm-12 col-md-12 col-lg-5 text-sm-center text-md-end" style="font-family:'Poppins';font-size:15px;">
           <span style="margin-right: 30px;">Desenvolvido por Fabino designer</span>
 
           <a class="social text-decoration-none" href="//www.linkedin.com/in/jo%C3%A3o-paulo-fabino/">
