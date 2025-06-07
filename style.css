@@ -222,7 +222,7 @@ body {
 }
 .cursos .boxCurso {
   width: 371px;
-  min-height: 360px;
+  height: 360px;
   border-radius: 30px;
   position: relative;
   display: flex;
@@ -292,12 +292,14 @@ body {
   font-size: 38px;
   font-family: "Work Sans";
   font-weight: bold;
-  border-bottom: 1px #dbdbdb;
+  border-bottom: solid 1px #dbdbdb;
+  padding-bottom: 15px;
 }
 .youtube .description {
   color: #272289;
   font-size: 22px;
   font-family: "Poppins";
+  margin-top: 18px;
 }
 .contato {
   background-color: #272289;
@@ -318,6 +320,8 @@ body {
 .youtube iframe {
   width: 100%;
   max-width: 100%;
+  height: 300px;
+  border-radius: 20px;
 }
 .youtube .row {
   justify-content: space-between;
@@ -561,7 +565,43 @@ body {
 .navbar .navbar-nav .nav-link.active {
   color: #00913b !important;
 }
+.navbar .dropdown-menu {
+  border: none;
+  border-radius: 0;
+  box-shadow: 0px 10px 20px #0000004d;
+  width: 239px;
+  padding-left: 30px;
+  padding-right: 30px;
+  overflow: hidden;
+}
+.navbar .dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 0;
+  bottom: 15px;
+  width: 6px;
+  background-color: #00913b;
+  z-index: 1;
+}
+.dropdown-item,
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: transparent;
+  color: #707070;
+  border-bottom: 1px solid #f4f4f4;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 7px;
+  padding-bottom: 7px;
+  font-size: 16px;
+  font-family: "Lato";
+}
 @media (max-width: 998px) {
+  .navbar-nav .dropdown-menu {
+    position: relative !important;
+    width: 100%;
+  }
   .navbar .navbar-nav {
     gap: 0px;
   }

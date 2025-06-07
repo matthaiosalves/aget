@@ -7,30 +7,33 @@
     </div>
 
     <div class="row justify-content-center" style="margin-bottom:50px;">
-      <div class="boxCurso">
-        <img src="https://placehold.co/600x400" alt="Imagem do curso" class="img-fluid imagemCurso" width="371" height="360" loading="lazy">
+      <?php
+      $args = array(
+        'post_type' => 'curso',
+        'posts_per_page' => 3
+      );
+      $query = new WP_Query($args);
 
-        <a href="/" class="btn btn-inscrever btn-azul">
-          Inscreva-se
-          <img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg" alt="Icone de setinha" class="img-fluid" width="15" height="18" loading="lazy">
-        </a>
-      </div>
-      <div class="boxCurso">
-        <img src="https://placehold.co/600x400" alt="Imagem do curso" class="img-fluid imagemCurso" width="371" height="360" loading="lazy">
+      if ($query->have_posts()) :
+        while ($query->have_posts()) : $query->the_post();
+          $imagem = get_the_post_thumbnail_url(get_the_ID(), 'full');
+          $url = get_field('url');
+      ?>
+          <div class="boxCurso">
+            <img src="<?php echo esc_url($imagem); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="img-fluid imagemCurso" width="371" height="360" loading="lazy">
 
-        <a href="/" class="btn btn-inscrever btn-azul">
-          Inscreva-se
-          <img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg" alt="Icone de setinha" class="img-fluid" width="15" height="18" loading="lazy">
-        </a>
-      </div>
-      <div class="boxCurso">
-        <img src="https://placehold.co/600x400" alt="Imagem do curso" class="img-fluid imagemCurso" width="371" height="360" loading="lazy">
-
-        <a href="/" class="btn btn-inscrever btn-azul">
-          Inscreva-se
-          <img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg" alt="Icone de setinha" class="img-fluid" width="15" height="18" loading="lazy">
-        </a>
-      </div>
+            <a href="<?php echo esc_url($url); ?>" class="btn btn-inscrever btn-azul" target="_blank" rel="noopener">
+              Inscreva-se
+              <img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg" alt="Icone de setinha" class="img-fluid" width="15" height="18" loading="lazy">
+            </a>
+          </div>
+      <?php
+        endwhile;
+        wp_reset_postdata();
+      else :
+        echo '<p class="text-muted">Nenhum curso disponível no momento.</p>';
+      endif;
+      ?>
     </div>
 
     <div class="row boxBarrer" style="padding-bottom:70px;">

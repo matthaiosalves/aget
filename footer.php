@@ -59,15 +59,19 @@
             </div>
             <div>
               <p style="font-family: 'Lato';font-size:16px;color:#1B1C1D;font-weight:600;margin-bottom:35px;">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/address-footer.svg" alt="" height="15" width="15" loading="lazy">
                 <?php the_field('endereco', 'option'); ?>
               </p>
               <p style="font-family: 'Lato';font-size:16px;color:#1B1C1D;font-weight:600;margin-bottom:0;">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/cellphone-footer.svg" alt="" height="15" width="15" loading="lazy">
                 <?php the_field('contato', 'option'); ?>
               </p>
               <p style="font-family: 'Lato';font-size:16px;color:#1B1C1D;font-weight:600;margin-bottom:22px;">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/cellphone-footer.svg" alt="" height="15" width="15" loading="lazy" class="invisible">
                 <?php the_field('sac', 'option'); ?>
               </p>
               <p style="font-family: 'Lato';font-size:16px;color:#1B1C1D;font-weight:600;">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/email-footer.svg" alt="" height="15" width="15" loading="lazy">
                 <?php the_field('e-mail', 'option'); ?>
               </p>
             </div>

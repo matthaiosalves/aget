@@ -34,7 +34,9 @@
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="<?php echo home_url(); ?>">Navbar</a>
+			<a class="navbar-brand" href="<?php echo home_url(); ?>">
+				<img src="<?php the_field('icone_principal', 'option'); ?>" alt="" class="img-fluid" width="auto" height="auto">
+			</a>
 
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -49,7 +51,7 @@
 					'container' => false,
 					'menu_class' => '',
 					'fallback_cb' => '__return_false',
-					'items_wrap' => '<ul id="%1$s" class="navbar-nav me-auto mb-2 mb-lg-0 %2$s">%3$s</ul>',
+					'items_wrap' => '<ul id="%1$s" class="navbar-nav %2$s">%3$s</ul>',
 					'depth' => 2,
 					'walker' => new bootstrap_5_wp_nav_menu_walker()
 				));

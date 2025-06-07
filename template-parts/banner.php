@@ -1,24 +1,32 @@
-<section class="banner">
-  <div class="swiper bannerSwiper">
-    <div class="swiper-wrapper">
-      <!-- Slide 1 -->
-      <div class="swiper-slide">
-        <img src="https://placehold.co/1200x400/0F431D/FFFFFF?text=Slide+1" class="img-fluid w-100" alt="Slide 1">
+<?php
+$banners = get_field('banners', 'option');
+
+if (!empty($banners) && is_array($banners)) :
+?>
+  <section class="banner">
+    <div class="swiper bannerSwiper">
+      <div class="swiper-wrapper">
+        <?php foreach ($banners as $banner) :
+          $desktop_img = $banner['banner_desktop']['imagem'] ?? '';
+          $mobile_img  = $banner['banner_mobile']['imagem'] ?? '';
+
+          if (!$desktop_img && !$mobile_img) continue;
+        ?>
+          <div class="swiper-slide">
+            <?php if ($desktop_img) : ?>
+              <img src="<?php echo esc_url($desktop_img); ?>" class="img-fluid w-100 d-none d-md-block" alt="Banner Desktop">
+            <?php endif; ?>
+
+            <?php if ($mobile_img) : ?>
+              <img src="<?php echo esc_url($mobile_img); ?>" class="img-fluid w-100 d-block d-md-none" alt="Banner Mobile">
+            <?php endif; ?>
+          </div>
+        <?php endforeach; ?>
       </div>
-      <!-- Slide 2 -->
-      <div class="swiper-slide">
-        <img src="https://placehold.co/1200x400/196A2F/FFFFFF?text=Slide+2" class="img-fluid w-100" alt="Slide 2">
-      </div>
-      <!-- Slide 3 -->
-      <div class="swiper-slide">
-        <img src="https://placehold.co/1200x400/123456/FFFFFF?text=Slide+3" class="img-fluid w-100" alt="Slide 3">
-      </div>
+
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
     </div>
-
-
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-
-    <div class="swiper-pagination"></div>
-  </div>
-</section>
+  </section>
+<?php endif; ?>
