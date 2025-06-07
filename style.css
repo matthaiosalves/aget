@@ -603,6 +603,18 @@ body {
   font-size: 16px;
   font-family: "Lato";
 }
+@media (max-width: 1130px) {
+  .cursos .boxCurso {
+    margin-bottom: 50px;
+  }
+  .boxBarrer .lineBarrer {
+    display: none;
+  }
+  .boxBarrer,
+  .youtube .row {
+    justify-content: center;
+  }
+}
 @media (max-width: 1100px) {
   .swiper-button-next {
     right: var(--swiper-navigation-sides-offset, 10px);
@@ -612,6 +624,15 @@ body {
   }
 }
 @media (max-width: 998px) {
+  .conheca-equipe .listTeam {
+    justify-content: center;
+  }
+  #page {
+    padding-top: 0px !important;
+  }
+  .navbar {
+    min-height: 95px;
+  }
   .navbar-nav .dropdown-menu {
     position: relative !important;
     width: 100%;
@@ -633,17 +654,5 @@ body {
   }
   .footer .boxItemFooter {
     margin-left: 0;
-  }
-}
-@media (max-width: 1130px) {
-  .cursos .boxCurso {
-    margin-bottom: 50px;
-  }
-  .boxBarrer .lineBarrer {
-    display: none;
-  }
-  .boxBarrer,
-  .youtube .row {
-    justify-content: center;
   }
 }
