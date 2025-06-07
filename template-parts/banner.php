@@ -12,7 +12,7 @@ if (!empty($banners) && is_array($banners)) :
 
           if (!$desktop_img && !$mobile_img) continue;
         ?>
-          <div class="swiper-slide">
+          <a class="swiper-slide" href="#">
             <?php if ($desktop_img) : ?>
               <img src="<?php echo esc_url($desktop_img); ?>" class="img-fluid w-100 d-none d-md-block" alt="Banner Desktop">
             <?php endif; ?>
@@ -20,7 +20,7 @@ if (!empty($banners) && is_array($banners)) :
             <?php if ($mobile_img) : ?>
               <img src="<?php echo esc_url($mobile_img); ?>" class="img-fluid w-100 d-block d-md-none" alt="Banner Mobile">
             <?php endif; ?>
-          </div>
+          </a>
         <?php endforeach; ?>
       </div>
 
