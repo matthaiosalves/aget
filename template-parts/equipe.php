@@ -1,14 +1,13 @@
 <?php
 $equipe = get_field('equipe');
-$equipe_titulo = get_field('equipe_titulo');
 ?>
 <section class="conheca-equipe" id="conheca-equipe">
   <div class="container-fluid">
 
     <div class="row">
       <div class="boxTitleAndDescription">
-        <h2 class="title"><?php echo $equipe_titulo['titulo']; ?></h2>
-        <p class="description"><?php echo $equipe_titulo['descricao']; ?></p>
+        <h2 class="title"><?php the_field('titulo'); ?></h2>
+        <p class="description"><?php the_field('subtitulo'); ?></p>
       </div>
     </div>
     <hr />
@@ -17,26 +16,18 @@ $equipe_titulo = get_field('equipe_titulo');
       <?php foreach ($equipe as $item) : ?>
         <div class="boxTeam col-sm-12 col-md-6 col-lg-4">
           <figure>
-            <img loading="lazy" src="<?php echo $item['imagem']; ?>" alt="Equipe">
+            <img loading="lazy" src="<?php echo $item['foto']; ?>" alt="Equipe">
           </figure>
 
           <div class="boxTitleAndDescription">
             <h2 class="title"><?php echo $item['nome']; ?></h2>
+            <p><?php echo $item['posicao']; ?></p>
             <hr />
             <p class="description"><?php echo $item['descricao']; ?></p>
           </div>
         </div>
       <?php endforeach; ?>
     </div>
-
-    <!-- <div class="row">
-      <div class="boxButton d-flex justify-content-center" style="margin-top: 30px;">
-        <a class="buttonAreas" href="/equipe">
-          SAIBA MAIS
-          <img loading="lazy" class="setaButton img-fluid" src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg" alt="Seta">
-        </a>
-      </div>
-    </div> -->
 
   </div>
 </section>

@@ -475,7 +475,7 @@ body {
   text-align: center;
 }
 .conheca-equipe .listTeam {
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 40px;
 }
 .conheca-equipe .listTeam .boxTeam {
@@ -514,6 +514,12 @@ body {
   height: 60px;
   border-radius: 35px;
   border: 2px solid #ffffff;
+}
+.swiper-button-next {
+  right: var(--swiper-navigation-sides-offset, 200px);
+}
+.swiper-button-prev {
+  left: var(--swiper-navigation-sides-offset, 200px);
 }
 .swiper-button-next:after,
 .swiper-button-prev:after {
@@ -596,6 +602,14 @@ body {
   padding-bottom: 7px;
   font-size: 16px;
   font-family: "Lato";
+}
+@media (max-width: 1100px) {
+  .swiper-button-next {
+    right: var(--swiper-navigation-sides-offset, 10px);
+  }
+  .swiper-button-prev {
+    left: var(--swiper-navigation-sides-offset, 10px);
+  }
 }
 @media (max-width: 998px) {
   .navbar-nav .dropdown-menu {
