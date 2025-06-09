@@ -81,13 +81,20 @@
             <div class="boxSocials">
               <?php
               $redes_sociais = get_field('redes_sociais', 'option');
-              foreach ($redes_sociais as $item):
+              if (!empty($redes_sociais) && is_array($redes_sociais)) :
+                foreach ($redes_sociais as $item):
+                  $link_data = $item['url'] ?? [];
+                  $link_url = is_array($link_data) ? ($link_data['url'] ?? '#') : $link_data;
               ?>
-                <a href="<?php echo $item['url']; ?>" class="social" target="_blank" rel="noopener noreferrer" aria-label="Abre o instagram do escritório">
-                  <?php echo $item['icone']; ?>
-                </a>
-              <?php endforeach; ?>
+                  <a href="<?php echo esc_url($link_url); ?>" class="social" target="_blank" rel="noopener noreferrer" aria-label="Abre a rede social do escritório">
+                    <?php echo $item['icone']; ?>
+                  </a>
+              <?php
+                endforeach;
+              endif;
+              ?>
             </div>
+
           </div>
 
         </div>
