@@ -63,7 +63,8 @@ body {
   font-family: "Work Sans";
   text-align: center;
 }
-.sobreNos .boxContent {
+.sobreNos .boxContent,
+.sobreNos .boxContent * {
   font-size: 20px;
   font-weight: normal;
   font-family: "Open Sans";
