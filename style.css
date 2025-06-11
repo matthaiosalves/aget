@@ -659,6 +659,20 @@ body {
   }
 }
 @media (max-width: 998px) {
+  .mobileInput {
+    margin-bottom: 0.5rem !important;
+    margin-top: 0.5rem !important;
+  }
+  .copyright {
+    padding: 20px;
+  }
+  .copyright .social {
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: start;
+  }
   .banner-content {
     justify-content: center;
   }

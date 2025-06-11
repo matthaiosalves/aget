@@ -28,7 +28,7 @@
                 <?php echo get_the_date('d/m/y'); ?>
               </p>
             </div>
-            <div class="d-flex align-items-end" style="width:370px;height:310px;background: linear-gradient(0deg, #0F431D 0%, #0F431D 49%, #196A2F00 100%), url('<?php echo esc_url($imagem); ?>'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+            <div class="d-flex align-items-end" style="max-width:100%;width:370px;height:310px;background: linear-gradient(0deg, #0F431D 0%, #0F431D 49%, #196A2F00 100%), url('<?php echo esc_url($imagem); ?>'); background-size: cover; background-position: center; background-repeat: no-repeat;">
               <div class="box" style="padding-left:20px;padding-right:20px;padding-bottom:30px;">
                 <span class="d-block" style="background-color:#22E69B;width:70px;height:10px;margin-bottom:5px;"></span>
                 <p style="color:#fff;font-size:18px;margin:0;font-family:'Open Sans';line-height:23px; display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;">

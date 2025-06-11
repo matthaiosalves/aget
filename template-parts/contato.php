@@ -16,11 +16,11 @@
         <p style="color:#FFFFFF;font-size:20px;font-family:'Work Sans';margin-bottom:45px;">Fique por dentro de notícias do mundo do Direito Tribútario e receba nossas dicas.</p>
 
         <form class="" action="/">
-          <div style="margin-bottom:30px;">
+          <div style="margin-bottom:30px;" class="mobileInput">
             <input type="text" class="form-control rounded-pill" placeholder="Nome" required>
           </div>
 
-          <div class="row g-2" style="margin-bottom:30px;">
+          <div class="row g-2 mobileInput" style="margin-bottom:30px;">
             <div class="col-md-6">
               <input type="email" class="form-control rounded-pill" placeholder="Email" required>
             </div>
