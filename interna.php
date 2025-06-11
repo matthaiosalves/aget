@@ -4,12 +4,6 @@ Template Name: Interna
 */
 get_header();
 ?>
-<style>
-  img {
-    max-width: 100%;
-    width: 100%;
-  }
-</style>
 <?php get_template_part('template-parts/banner'); ?>
 
 <section class="sobreNos" style="margin-top:70px;margin-bottom:70px;">
