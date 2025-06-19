@@ -35,7 +35,7 @@
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="<?php echo home_url(); ?>">
-				<img src="<?php the_field('icone_principal', 'option'); ?>" alt="" class="img-fluid" width="auto" height="auto">
+				<img src="<?php the_field('icone_principal', 'option'); ?>" alt="" class="img-fluid" width="230" height="auto">
 			</a>
 
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"

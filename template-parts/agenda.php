@@ -21,11 +21,12 @@
           $titulo = get_the_title();
           $imagem = get_the_post_thumbnail_url(get_the_ID(), 'full');
           $url = get_field('url');
+          $data = get_field('data');
       ?>
           <a class="boxAgenda text-decoration-none" href="<?php echo esc_url($url); ?>" target="_blank">
             <div class="boxData cardTop mb-0 p-0">
               <p class="data mb-0">
-                <?php echo get_the_date('d/m/y'); ?>
+                <?php echo $data; ?>
               </p>
             </div>
             <div class="d-flex align-items-end" style="max-width:100%;width:370px;height:310px;background: linear-gradient(0deg, #0F431D 0%, #0F431D 49%, #196A2F00 100%), url('<?php echo esc_url($imagem); ?>'); background-size: cover; background-position: center; background-repeat: no-repeat;">

@@ -5,10 +5,10 @@
         <span style="color:#C2C2C2;font-size:12px;font-family:'Open Sans';font-weight:600;">INFORMAÇÕES</span>
         <h3 style="color:#FFFFFF;font-size:36px;font-family:'Work Sans';font-weight:700;margin-top:13px;margin-bottom:60px;">Contato</h3>
         <p style="color:#FFFFFF;font-size:18px;font-family:'Open Sans';margin-bottom:20px;font-weight:700;">Goiânia</p>
-        <p style="color:#C2C2C2;font-size:16px;font-family:'Open Sans';margin-bottom:50px;">1Rua 72, 223 Jardim Goias- Goiânia - GO</p>
-        <p style="color:#C2C2C2;font-size:16px;font-family:'Open Sans';">(62) 98622-0494</p>
-        <p style="color:#C2C2C2;font-size:16px;font-family:'Open Sans';margin-bottom:50px;">SAC: 0800 903 7070</p>
-        <p style="color:#C2C2C2;font-size:16px;font-family:'Open Sans';">agetgo@gmail.com</p>
+        <p style="color:#C2C2C2;font-size:16px;font-family:'Open Sans';margin-bottom:50px;"><?php the_field('endereco', 'option'); ?></p>
+        <p style="color:#C2C2C2;font-size:16px;font-family:'Open Sans';"><?php the_field('contato', 'option'); ?></p>
+        <p style="color:#C2C2C2;font-size:16px;font-family:'Open Sans';margin-bottom:50px;"><?php the_field('sac', 'option'); ?></p>
+        <p style="color:#C2C2C2;font-size:16px;font-family:'Open Sans';"><?php the_field('e-mail', 'option'); ?></p>
       </div>
       <div class="col-lg-6">
         <span style="color:#C2C2C2;font-size:12px;font-family:'Open Sans';font-weight:600;">E-MAIL</span>

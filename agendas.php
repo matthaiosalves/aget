@@ -29,9 +29,15 @@ get_header();
           $imagem = get_the_post_thumbnail_url(get_the_ID(), 'full');
           $titulo = get_the_title();
       ?>
-          <a href="<?php echo esc_url($url); ?>" class="boxImage text-decoration-none" target="_blank" rel="noopener">
-            <img src="<?php echo esc_url($imagem); ?>" alt="<?php echo esc_attr($titulo); ?>" class="img-fluid" width="370" height="461" loading="lazy">
-          </a>
+          <?php if (!empty($url)) : ?>
+            <a href="<?php echo esc_url($url); ?>" class="boxImage text-decoration-none" target="_blank" rel="noopener">
+              <img src="<?php echo esc_url($imagem); ?>" alt="<?php echo esc_attr($titulo); ?>" class="img-fluid" width="370" height="461" loading="lazy">
+            </a>
+          <?php else : ?>
+            <div class="boxImage text-decoration-none">
+              <img src="<?php echo esc_url($imagem); ?>" alt="<?php echo esc_attr($titulo); ?>" class="img-fluid" width="370" height="461" loading="lazy">
+            </div>
+          <?php endif; ?>
       <?php
         endwhile;
         wp_reset_postdata();
@@ -39,6 +45,7 @@ get_header();
         echo '<p class="text-center text-muted">Nenhum evento encontrado.</p>';
       endif;
       ?>
+
     </div>
   </div>
 </section>
