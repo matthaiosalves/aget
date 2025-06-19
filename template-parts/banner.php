@@ -1,5 +1,17 @@
+<style>
+  .banner .banner-slide {
+    height: 600px;
+  }
+  @media(max-width: 1600px) {
+    .banner .banner-slide {
+      height: 400px;
+    }
+  }
+</style>
+
 <?php
-$banners = get_field('banners', 'option');
+// Busca os banners da página atual
+$banners = get_field('banners');
 
 if (!empty($banners) && is_array($banners)) :
 ?>
@@ -13,16 +25,16 @@ if (!empty($banners) && is_array($banners)) :
           $url_desktop = is_array($banner['banner_desktop']['url'] ?? null) ? ($banner['banner_desktop']['url']['url'] ?? '') : ($banner['banner_desktop']['url'] ?? '');
           $url_mobile  = is_array($banner['banner_mobile']['url'] ?? null) ? ($banner['banner_mobile']['url']['url'] ?? '') : ($banner['banner_mobile']['url'] ?? '');
 
-
           if (!$desktop_img && !$mobile_img) continue;
         ?>
           <div class="swiper-slide">
+            <!-- Banner Desktop -->
             <div
               class="banner-slide d-none d-md-block"
-              style="background-image: url('<?php echo esc_url($desktop_img); ?>');min-height:600px;background-repeat:no-repeat;background-size:cover;">
+              style="background-image: url('<?php echo esc_url($desktop_img); ?>'); background-repeat:no-repeat; background-size:cover;">
               <div class="banner-content container-fluid">
                 <?php if ($url_desktop) : ?>
-                  <a href="<?php echo $url_desktop; ?>" class="btn btnVerMais">
+                  <a href="<?php echo esc_url($url_desktop); ?>" class="btn btnVerMais">
                     Saiba mais
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="17px" fill="#FFFFFF">
                       <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
@@ -32,12 +44,13 @@ if (!empty($banners) && is_array($banners)) :
               </div>
             </div>
 
+            <!-- Banner Mobile -->
             <div
               class="banner-slide d-block d-md-none"
-              style="background-image: url('<?php echo esc_url($mobile_img); ?>');min-height:600px;background-repeat:no-repeat;background-size:cover;">
+              style="background-image: url('<?php echo esc_url($mobile_img); ?>'); background-repeat:no-repeat; background-size:cover;">
               <div class="banner-content container-fluid">
                 <?php if ($url_mobile) : ?>
-                  <a href="<?php echo $url_mobile; ?>" class="btn btnVerMais">
+                  <a href="<?php echo esc_url($url_mobile); ?>" class="btn btnVerMais">
                     Saiba mais
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="17px" fill="#FFFFFF">
                       <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
@@ -55,5 +68,4 @@ if (!empty($banners) && is_array($banners)) :
       <div class="swiper-pagination"></div>
     </div>
   </section>
-
 <?php endif; ?>

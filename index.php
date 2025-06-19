@@ -52,6 +52,7 @@ get_header();
 <?php get_template_part('template-parts/agenda'); ?>
 <?php get_template_part('template-parts/youtube'); ?>
 <?php get_template_part('template-parts/contato'); ?>
+<?php get_template_part('template-parts/button-float'); ?>
 
 
 <?php
